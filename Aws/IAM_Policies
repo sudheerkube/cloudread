@@ -1,0 +1,32 @@
+User: 
+Group: 
+Policy :
+ARN: Amazon resource Number
+
+Roles: Assumed by users,applications and services
+Short-term access is granted to s3
+Cross account Roles
+
+- identity-based - user, group,role
+- Resource based  - to resources  
+- Attribute based authentication
+- IAM Permission boundaries
+- Org scp 
+deny > org scp > res b > iam > sess > identity 
+
+AWS Organization: 
+
+- Service controlled policies
+
+- Instance profile -> IAMRole
+- IAM role -> Trust Policy,Permissions Policy
+
+- AD connector, Federation services
+- IAM Permission boundaries
+- AWS Organizations service control
+- sessions policy based 
+- Inline policy
+- Resource based policy is not effected by permission boundaries
+AKeyManagementService : 
+- 
+
