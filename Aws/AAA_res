@@ -1,0 +1,26 @@
+ Familiarity with Cloud Managed & Governance Services Landing Zone (or Control Tower),
+  AWS Organizations, AWS Service Catalog, AWS SSO, AWS Security Hub, AWS Systems Manager, 
+  Cross AWS Account access etc.
+• Solid competency in working with AWS IAM (Identity and Access Management) portfolio of services 
+like IAM Roles, Policies Identify Federation, Service Control Policies (SCPs), AWS Config Rules AWS Organizations
+
+• Expertise to automate using CloudFormation, Step Functions, Lambda
+
+• Proficiency scripting and programming to incorporate necessary security controls with PowerShell, shell, python or similar languages
+• Proficiency working with below AWS Services
+
+o Compute: EC2, Lambda, Elastic Beanstalk, ECS, ECR , autoscaler, ELB.
+
+o Networking: VPC, Direct Connect, Route 53, Cloud Front, Transit Gateway
+
+o Storage: EBS, S3, EFS, Glacier, Storage Gateway
+
+o Databases: Redshift, RDS, DynamoDB, Elasti Cache, Redshift
+
+o Integration: SQS, SNS, StepFunctions,
+
+o Development: Code Commit, CodeBuild, CodeDeploy
+
+Security: IAM, Secrets Manager, GuardDuty, Inspector, Certificate Manager, KMS, Security Hub
+
+o Governance: CloudWatch, CloudFormation, CloudTrail, Config, TrustedAdvisor

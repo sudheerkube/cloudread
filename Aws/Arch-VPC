@@ -1,0 +1,40 @@
+AWS Organizations 
+    - Cost center
+
+AWS Naming and Tagging standards
+   - Cost center,Environment, Tier,Project,
+
+Security Standards:
+    - Security Group for ec2, VPC and subnets restrict access ,
+    - Encryption is at rest for ec2 vol
+    - Detailed monitoring is enabled.
+    - All logs captured by cloudtr 
+    - Limited instance types are allowed.ail
+    - ENv, cost type, and contact email tags
+
+---------------------------------------------------------------
+VPC: 
+ - Logical Isolated virtul network for define
+   RT : Network direction , specifies the destination address and target can IGW,TGW,VPC,PEERING
+   NAT Gateway:  subnet can connect to services outside your VPC but external services cannot
+            initiate a connection with those instances
+   VPCEndpoint: private connection between VPC to supported AWS services 
+              Interface endpoint : enables you to privately access services by using private IP addresses
+              Gateway endpoint: specify as a target for a route in your route table for traffic destined to a 
+              supported AWS service Only DynamoDB and S3.
+              - Access to the resources in other services can be controlled by endpoint policies.
+              - End point doesn't override existing IAM Policies 
+    Security Groups: Firewall rules that controls the traffic for instance.
+    VPC Peering: Across VPC connectivity
+    NACL: At subnet level
+    VPGW - VPN connector from amazon end attach it to the VPC 
+    ASN - To exchanging routing information
+    CGW - A link to your connection from on permise 
+    Transit Gateway - 
+      Best patch selection - Longest prefix specific route
+      Static route entries, including site to site VPN
+      VPC propagated routes
+      BGP Propagated routes Direct connect
+      BGP " " Site to site VPN
+
+
