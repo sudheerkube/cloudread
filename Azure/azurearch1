@@ -1,0 +1,120 @@
+ Architecure Model:
+       - 3-subscription architecture
+       - RBAC 
+       - Azure tagging will be enforced for chargeback purposes
+       - Azure Subscription Management (ASM) supports high-level management of the Azure Subscription.
+         When an Azure Subscription is created (Azure Service Account), an Azure Service Administrator is assigned.
+
+
+Subscription Model: 
+-  Enterprise enrollment -> depts (optional) -> Account -> Subscription 
+
+Roles in Subscription Management - 
+
+- Enterprise Administrator -> Enterprise Enrolment -> Top level controls accounts, account owners, usage and billing.
+- Account Owner -> account -> Create and manage subscriptions, only the Account Owner can perform these functions 
+Manage Service Admin and Co-Adminis View usage for subscriptions,View charges – if EA has provided access.
+- Service Administrator -> Subscription -> Access and manage subscriptions and developmprojects on the develop portal
+- subscriptions owner -> Access and manage subscriptions and development projects on the developer portal
+
+Azure Subscription Modelling - Production, Dev, QA/Test
+
+Azure Naming Convention -> <ResourceType>|<LocationCode>|<Environment+Numeric> 
+  - Storage Account Names must be unique across Azure, not just Micron subscriptions
+  - Storage Table Name must be unique within Azure subscription account
+  - Search Service and Virtual machines are constrained 2 to 15 characters
+  - Storage Account Name cannot have dash, dots, etc
+  - Storage account names must be all lower case
+
+High availability: 
+Azure Gateways -> Gateways will be implemented with high availability in an active/passive design. 
+              When an Azure Gateway is created, a second Gateway is automatically created by Azure.
+
+Azure ExpressRoute -> consists of two connections to two Microsoft Enterprise edge routers (MSEEs)
+                       from connectivity provider / your network edge.
+
+Azure Traffic Manager -> HA in an active/passive design. Azure tm is created, 
+                         a second tm is automatically created by Azure.
+
+Azure Load balancer -> -do-
+
+Network: 
+ ExpressRoute -> Private peering connections to customer virtual networks and 
+      Microsoft peering connection to Microsoft services like Office 365
+    and Skype and any Azure public services (PaaS)
+  - Connection speed - ranges from 50 Mbps to 10 Gbps
+  - Peering location - Depens on provider
+  - ExpressRoute gateways come in three configurations -> Std (1gbs), high (2),ultra(9)
+
+
+Virtual Networks -> building block for establishing nw, Virtual networks are containers for subnets and gateway, 
+
+User Defined Routes -> assign routes that override the default implicit system routes, ExpressRoute BGP advertised
+ routes, or the local-site network-defined routes for S2S connections.Configuring a user defined route allows 
+ the specification of next-hop definition rules that control traffic flow within a subnet, between subnets,
+  from a subnet through an appliance to another subnet, to the Internet, and to on-premises networks.
+
+ Implicit System Routes -> 
+
+ Routing of traffic from a virtual machine is accomplished by using implicit system routing via a distributed router
+  that is implemented at the virtual network level. Every packet follows a set of implicit routes that are 
+  implemented at the host level. These routes control the flow of traffic within the virtual network to on-premises
+networks (if enabled), and to the Internet. Traffic flow to the Internet is achieved through NAT by the host
+
+
+  User Defined Routing with Virtual Appliances -> 
+
+  If the user-defined routing is defined with NextHopType VNETLocal routing, 
+  route to a virtual machine in the virtual network, based on address.
+ VPNGateway routing, route to a machine on-premises, based on address.
+ VirtualAppliance routing, route to the virtual appliance, based on address.
+  Internet routing, route to the Internet over the host NAT
+
+  Network Security Groups -> control traffic to one or more virtual machine instances in a virtual network. Network Security Groups are like firewall rules
+   in that they provide the ability to control the inbound and outbound traffic to a subnet, a virtual machine,
+    or virtual network adapter.
+    - NSG limits :  100 region/per subscription, 1 for subnet,vm, adapter, 100 rules
+
+
+ Storage: 
+      GPV1->
+   - A Standard storage performance tier which allows you to store Tables, Queues, Files, Blobs and Azure virtual machine disks. 
+    This tier is hosted on Hard Disk Drives (HDD)
+
+    - A Premium storage performance tier which currently only supports Azure virtual machine disks.
+    This tier is hosted on Solid State Drives (SSD).
+       GPV2->
+
+        - Types: Blob (block,page), table, Queue, File.
+        Blob: 3 tier -> hot,cold and archieve.
+     
+     -  Storage Security: Azure authentication and Storage account key 
+
+        - Locally redundant storage : 3 copies locally 
+        - Zone-redundant storage : 3 copies Supports one region failure
+        - Geo-redundant storage : Six copies, data is durable in 3 regions
+        - Read-access geo-redundant storage : Read only access in the second region
+
+        Premium Storage: P10-p50: Is local only, Snapshot and GRS 
+
+        - Managed Disks - 0,000 VM disks in a subscription, which will enable you to create thousands of VMs 
+         in a single subscription.
+
+Virtual Machines : 
+   - availability set: Fault Domains and update domain
+
+    - Azure disk encryption -> Azure Key Vault service -> BitLocker for Windows VM Disks and DMCrypt for Linux VM disks
+
+    - 
+
+PAAS (Platform as a service): 
+
+- Azure Cosmos DB 
+-   Azure Events hub 
+      - Event producers,Partitions,Consumer groups, Throughput units,Event receivers 
+- Azure Search 
+-   Azure App Service – Web Apps
+- Azure SQL Database
+- Azure Automation
+
+- Azure Resource Locking 
