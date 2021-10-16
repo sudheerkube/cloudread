@@ -1,0 +1,63 @@
+Docker Arch- cli,REstapi.dockdaemn,containerd,containerd-shim,runc,libcontainer
+
+Docker Objects:
+    Docker Images, containers,vol,n/w
+
+Image Registry:
+        DockerHUb and DTR ( Docker trusted registry)
+
+Commands:
+   docker container option
+   docker image options
+   docker volumes option
+   docker network options
+
+Docker live restore: Containers will run though docker deamon is down.
+
+docker Copy files : docker container cp "source_path" "dest_path"
+
+docker port : -p hostport:containerport 
+
+
+Docker Image:
+
+  -  docker image search, ls, list, pull,push
+  - docker authentication use : docker login 
+  -  docker system df
+  -  docker image save
+
+Docker Container Commit : 
+
+- Build Context
+- Build Cache
+
+Docker Copy vs ADD: Add accepts tar and url path file
+
+Docker CMD vs EntryPoint:
+
+- Entrypoint : Specify the paramater
+
+Mutlistage Builds:
+
+- Docker Daemon Security
+
+Namespaces - isolated work space called the container
+Cgroups : Limits resources like mem and cpu.
+  CPu shares 
+
+Docker Netowrk : 
+  Default n/w are bridge,none and host
+Overlayn/w - 
+
+docker network ls
+        create --driver 
+
+MacVLAN - legacy apps to go through host only n/w
+
+Embedded DNS : 127.0.0.11
+
+DOcker Volumes:
+
+
+
+

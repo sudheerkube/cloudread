@@ -1,0 +1,4 @@
+docker storage:
+- volume drivers : Volume driver plugins, default plugins: local,azure,portworx,netapp,google.
+
+- storage Classes: 

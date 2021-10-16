@@ -1,0 +1,52 @@
+docker system info
+
+docker swarm init
+docker swarm join 
+docker  swarm join-token worker
+
+docker node inspect 
+docker node demote
+
+docker swarm leave
+docker node rm 
+
+docker node update --availabity drain/active
+
+Quorum:
+
+Distributed consenus RAFT Algorithm ->
+- For electing leaders
+- RAFT DB 
+
+docker swarm lock 
+
+--
+docker service create --replicas= httpd
+global service (--mode=global) creates: one replication on app on all nodes
+
+---
+Placement of swarm
+Add labels to place workloads based on the requirements
+--label-add type=
+--constraints
+
+
+ - Orchestrator creating tasks in swarm
+ - Scheduler  instructing a worker to run a task 
+ - Dispatcher assigns tasks to nodes in swarm
+ - allocater for assgin ip address
+------
+
+Docker Config
+ 
+Docker Config create "name" /path 
+docker service update --config-rm nginx-conf nginx
+docker config rm nginx-conf
+
+---
+Service Discovery:
+
+-- 
+Docker Stack:  
+
+

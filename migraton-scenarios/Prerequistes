@@ -1,0 +1,36 @@
+DC to Cloud Migration: 
+
+- Analyaze the existing environments
+- Inventory Discovery tools ( )
+- Disk, 
+
+- First Establish connectivity from on prem to Cloud
+     - via internet ( )
+     - via tunnel (site to site tunnel /express route or direct connect), create aws site tunnel 
+
+- Type of Systems, capacity of systems, storage type, utilization, cpu, mem,
+
+- Cloud endure agent will be installed on each system that needs to be migrated 
+    - First creates a migration server
+     - initates a copy on all the volumes on the server and starts the sync.
+     - application, webserver, db server. 
+
+     - Test connecivity -> check web server and db server migration 
+
+     -> cut over plan,  Route53, secutiry groups, AD account, 
+
+- Challenges: 
+  - Type of DIsk 
+  - Destination Disk 
+  - Type of migration server config should be high ()
+  - Network Bandwidth -> 10mbs-15mbs throughput upto 1 gbs
+  - Source Network
+
+  - Issues: 
+    DR plan, Disks are synched 
+    Fail back -> Managed Disks and Unmanaged Disks.
+ 
+ - 
+
+
+
