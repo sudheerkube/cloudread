@@ -1,0 +1,33 @@
+Install httpd (whatever version is available in the yum repo by default) and 
+configure it to serve on port 5000 on All App servers. 
+You can make it part of your Jenkins job or you can do this step manually on all app servers.
+
+sudo yum install httpd -y 
+sudo sed -i 's/Listen 80/Listen /g' /etc/httpd/conf/httpd.conf
+sudo systemctl start httpd
+
+
+
+Create a Jenkins job named nautilus-app-deployment and configure it in a way that
+ if anyone pushes any new change to the origin repository on master branch the job should auto build and 
+ deploy the latest code on Storage server under /data directory. Since /data on Storage server is a NFS mount, 
+ changes should auto reflect on all apps.
+
+
+
+
+
+SSH into Storage Server using sarah user credentials mentioned above. 
+Under sarah user's home you will find a cloned Git repository named web.
+Under this repository there is an index.html file, update its content to Welcome to the xFusionCorp Industries and 
+then push the changes to the origin into master branch. This push must trigger your Jenkins job and the 
+2az3aaaaaaaaaaaaaaaaaa3latest changes must be deployed also make sure it deploys the entire 
+repository content not only index.html file.
+
+source file: */
+exec command:
+#!/bin/bash
+sudo cp index.html /data
+
+#!/bin/bash
+echo Bl@kW | sudo -S cp * /data

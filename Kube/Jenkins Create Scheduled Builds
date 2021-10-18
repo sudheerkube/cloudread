@@ -1,0 +1,42 @@
+Create a Jenkins jobs named copy-logs.
+
+
+
+Configure it to periodically build every 4 minutes to copy the Apache logs (both access_log and error_logs)
+ from App Server 2 (from default logs location) to location /usr/src/sysops on Storage Server.
+
+
+
+
+echo "Ir0nM@n"| sudo -S mkdir -p /tmp/logs1
+
+echo "Ir0nM@n" | sudo -S cp /var/log/httpd/access_log /tmp/logs1
+
+echo "Ir0nM@n" | sudo -S cp /var/log/httpd/error_log /tmp/logs1
+
+echo "Ir0nM@n" | sudo -S chmod 777 /tmp/logs1
+
+echo "Ir0nM@n" | sudo -S chown -R root:root /tmp/logs1
+
+echo "Ir0nM@n" | sudo -S yum install sshpass -y
+
+sshpass -p "Bl@kW" scp -o 'StrictHostKeyChecking=no' /tmp/logs1/access_log natasha@ststor01:/usr/src/itadmin
+
+sshpass -p "Bl@kW" scp -o 'StrictHostKeyChecking=no' /tmp/logs1/error_log natasha@ststor01:/usr/src/itadmin
+
+
+echo "Ir0nM@n"| sudo -S mkdir -p /tmp/logs1
+
+echo "Ir0nM@n" | sudo -S cp /var/log/httpd/access_log /tmp/logs1
+
+echo "Ir0nM@n" | sudo -S cp /var/log/httpd/error_log /tmp/logs1
+
+echo "Ir0nM@n" | sudo -S chmod 777 /tmp/logs1
+
+echo "Ir0nM@n" | sudo -S chown -R root:root /tmp/logs1
+
+echo "Ir0nM@n" | sudo -S yum install sshpass -y
+
+sshpass -p "Bl@kW" scp -o 'StrictHostKeyChecking=no' /tmp/logs1/access_log natasha@ststor01:/usr/src/itadmin
+
+sshpass -p "Bl@kW" scp -o 'StrictHostKeyChecking=no' /tmp/logs1/error_log natasha@ststor01:/usr/src/itadmin

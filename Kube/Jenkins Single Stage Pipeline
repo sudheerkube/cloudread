@@ -1,0 +1,13 @@
+Add a slave node named Storage Server. It should be labeled as ststor01 and 
+its remote root directory should be /home/natasha.
+
+We have already cloned repository on Storage Server under /home/sarah/web_app.
+ Update the content of the file index.html under the same repository to Welcome to Nautilus Group! and push the changes to the origin into master branch.
+
+Apache is already installed on all app Servers its running on port 5002.
+
+Create a Jenkins pipeline job named nautilus-webapp-job (it must not be a Multibranch pipeline) and 
+configure it to:
+
+a. Deploy the code from web_app repository under /data on Storage Server, as this location is already mounted to the document root /var/www/html of app servers. The pipeline should have a single stage named Deploy ( which is case sensitive )
+ to accomplish the deployment.
