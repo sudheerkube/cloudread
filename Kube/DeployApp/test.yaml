@@ -1,0 +1,14 @@
+apiVersion: v1 
+kind: PersistentVolumeClaim 
+metadata: 
+name: jekyll-site-datacenter 
+namespace: jekyll-namespace-datacenter 
+spec: 
+accessModes:
+ - ReadWriteMany 
+ resources: 
+ requests:
+  storage: 1Gi
+
+
+kubectl get events -n jekyll-namespace-nautilus

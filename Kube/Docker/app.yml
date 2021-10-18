@@ -1,0 +1,23 @@
+version: "3.3"
+services:
+  web:
+    container_name: php_host
+    image: php:7.4.16-apache
+    ports:
+      - "8087:80"
+    volumes:
+      - /var/www/html:/var/www/html
+    depends_on:
+      - DB
+  DB:
+    container_name: mysql_host
+    image: mariadb:latest
+    ports:
+      - "3306:3306"
+    volumes:
+      - /var/lib/mysql:/var/lib/mysql 
+    environment:
+      - MYSQL_DATABASE=database_host
+      - MYSQL_ROOT_PASSWORD=kodekloud
+      - MYSQL_USER=kkeuser
+      - MYSQL_PASSWORD=kodekloud
