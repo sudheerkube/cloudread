@@ -1,0 +1,32 @@
+spec:
+    containers:
+    - image: busybox
+      imagePullPolicy: Always
+      name: simple-webapp
+      args:
+      - /bin/sh
+      - -c
+      - &gt;
+        i=0;
+        while true;
+        do
+          echo "$i: $(date)" &gt;&gt; /var/log/1.log;
+          echo "$(date) INFO $i" &gt;&gt; /var/log/2.log;
+          i=$((i+1));
+          sleep 1;
+        done
+      ports:
+      - containerPort: 8080
+        protocol: TCP
+      volumeMounts:
+      - name: varlog
+        mountPath: /var/log
+    - name: count-log-1
+      image: busybox
+      args: [/bin/sh, -c, 'tail -n+1 -f /var/log/1.log']
+      volumeMounts:
+      - name: varlog
+        mountPath: /var/log
+volumes:
+    - name: varlog
+      emptyDir: {}

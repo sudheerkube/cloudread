@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pink
+  labels:
+    app: pink
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pink
+  template:
+    metadata:
+      labels:
+        app: pink
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: color
+                operator: In
+                values:
+                - pink
+      containers:
+      - name: nginx-container
+        image: nginx:latest
+ 
+      kubectl label nodes node01 color=pink
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    env: test
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
+  nodeSelector:
+    disktype: ssd

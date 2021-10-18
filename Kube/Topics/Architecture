@@ -1,0 +1,20 @@
+------------------------------------------------
+Important Components : 
+
+- Worker Nodes : Host Application as containers
+- Master Nodes: Manage, Plan, Schedule, Monitor Nodes 
+- ETCD - Stores information in Key value Store 
+- Kube-Schedule - Taitns and Tolerants 
+-  Controller 
+     - Node-controllers - Nodes of on new boarding , handling situation during Node failures
+     - Replicatin Controller - Desired no of containers are running.
+     - Controller Manager - 
+
+- Kube-Apiserver  - Is Responsible for all Managemnt and Orchestarting Kube cluster 
+
+-  Docker Engine -> Must be installed in ALl nodes - like DOCKER, COntainerD or RKT 
+
+- Kubelet - Agent  Runs on each worker node in Cluster , provides info to kube-apiserver 
+- KubeProxy -> Ensures necessary to ensure roles to communicate within Worker Nodes 
+
+

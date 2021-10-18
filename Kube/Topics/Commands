@@ -1,0 +1,115 @@
+kubectl apply -f ns.yml
+kubectl create ns vote
+kubectl create -f votedeploy.yaml
+
+kubectl create -f "input file"
+kubectl get 
+kubeclt delete 
+kubectl replace -f 
+kubectl scale -replicas= -f 
+
+kubectl edit Deployment 
+
+
+kubectl get pods -n kubesystem
+
+change context:
+  kubectl config current-context 
+
+kubectl get all 
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: my-app
+  namespace: my-namespace
+---------------------------------
+
+Create a Pod: 
+kubectl run nginx --image=nginx
+
+kubectl run nginx --image=nginx --dry-run=client -o yaml
+
+
+Create a deployment:
+kubectl create deployment --image=nginx nginx
+
+Generate Deployment YAML file (-o yaml). Don't create it(--dry-run):
+kubectl create deployment --image=nginx nginx --dry-run -o yaml
+
+kubectl create deployment nginx --image=nginx --replicas=4
+
+scale:
+kubectl scale deployment nginx --replicas=4
+
+Service
+Create a Service named redis-service of type ClusterIP to expose pod redis on port 6379:
+
+kubectl expose pod redis --port=6379 --name redis-service --dry-run=client -o yaml
+
+Create a Service named nginx of type NodePort to expose pod nginx's port 80 on port 30080 on the nodes:
+
+kubectl expose pod nginx --port=80 --name nginx-service --dry-run=client -o YAML
+
+
+kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run=client -o yaml
+
+
+Update and Rollback:
+
+kubectl create -f deployment-def.yaml
+
+kubectl get deployments
+
+kubectl apply -f deployments.yaml
+
+kubectl set image deplpoy/myapp-deployment ngninx=nginx
+
+kubectl rollout status deployment/myapp-deployments
+kubectl rollout hist
+
+kubectl rollout undo deployment/myapp-deployment
+
+To define command in Kubernetes: 
+
+  cmd-> args[]
+  EntryPoint -> command
+
+------------------------------------------------------------------------------------------------------------------------------------
+ConfigMaps: 
+
+- Uses for configuration of env variable in key-value pair
+
+use 'envFrom'  property is list and can pass many variable as required.
+- It can be used in envFrom,env and volumes.
+
+in Kuberener use env 
+env - name, valueFrom, ConfigMaps
+
+-------------------------------------------------------------------------------------------------------------------------------------
+ Move Pods to another node
+
+- kubectl drain nodename 
+
+To schedule pods on nodes
+
+- kubectl uncordon nodename
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+kubectl get persistentvolumeclaim claimname
+
+kubectl delete  persistentvolumeclaim claimname
+
+
+
+
+
+
+
+
+
+
+
+  

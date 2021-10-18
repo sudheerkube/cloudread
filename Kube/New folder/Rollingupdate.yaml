@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd-deploy
+  namespace: datacenter
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      name: httpd-deploy
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 2
+  template:
+    metadata:
+      labels:
+        name: httpd-deploy
+    spec:
+      containers:
+      - name: httpd
+        image: httpd:2.4.27
+
+
+commands:
+
+- kubectl apply -f httpd-deployment.yaml
+
+- kubectl get deployments
+
+- kubectl get pods --show-labels
+
+- kubectl set image deployment/httpd-deployment httpd=httpd:2.4.43 --record=true
+
+- kubectl rollout status deployment/httpd-deployment
+
+- kubectl rollout history deployment.v1.apps/httpd-deployment
+
+- kubectl rollout undo deployment.v1.apps/nginx-deployment
+

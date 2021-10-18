@@ -1,0 +1,15 @@
+Rolling updates and Rollbacks 
+
+- Rollout : A new deployment revision 
+           Recreate: Terminate all running and creates new ones.
+           RollingUpdating: Default replaces one by one adn deploys a new version
+           BlueGreen: Old version along with new versin is deployed and migrated one by one.
+           Canary: Phased approach 
+
+           Rollback: 
+
+kubectl rollout undo deployment/myapp-deployment
+
+-------------------------------------------------------------------------------------------------------------------
+
+OS Upgrades: 

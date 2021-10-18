@@ -1,0 +1,52 @@
+Docker Storage: 
+  Storage Drivers and Volume Driver Plugins
+
+Storage Drivers: 
+-  File System -> /var/lib/docker like aufs,containers,images,volumes default in docker 
+
+  VolumeMount: 
+- docker volume create "name of the volume"
+
+- docker run -v nameofvoloncont:pathoflocationhost  "imagename"
+
+Mapping External volume on docker: Bindmount 
+- docker run -v "pathof location onhost": pathoflocationhost "imagename"
+
+- docker run \
+   --mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql
+
+- Docker uses storage drives to enable layered architecture 
+  Common sd- AUFS,ZFs,btrfs,devicemapper,overlay&2 
+  Docker chooses based on the Operating System
+
+- Volumes: Volumes are maintanied by Volume Drivers 
+
+- Container Run time - docker,rkt,cri-o, 
+
+- CSI - Containter storage interface 
+  - Create volume
+  - Delete volume
+  - ControllerPublishVolume
+
+
+Kuberenetes Volumes: 
+
+- Volume and VolumeMounts 
+
+
+Persistent Volumes:
+  - Cluster wide pool of storage 
+  - Contains access Modes: ReadOnlyMany,Readwirteonce,Readonly once
+  - hostpath defines path to be mounted for volumes
+
+
+- Persistent Volume Claim: 
+  To make a volume availble to bind.
+
+
+
+  
+  
+
+
+

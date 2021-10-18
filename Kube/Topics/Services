@@ -1,0 +1,26 @@
+Services:
+
+  - Helps in connecting across Services
+
+  - External Communication : 
+
+     -  NodePort: Service makes internal pod port accessible on Node
+         consists of TargetPort, Port, NodePort ( only valid range)
+        
+     -  CLusterIP: Creates a virtual IP to create communicatin across groups of pods, No External access 
+           
+     -  Loadbalancer:  the standard way to expose a service to the internet. On GKE, this will spin up a Network Load Balancer that will give you a single IP address 
+                 that will forward all traffic to your service
+
+     - Ingress:  Ingress is actually NOT a type of service. Instead, it sits in front of multiple services and act as a “smart router” or entrypoint into your cluster
+                The default GKE ingress controller will spin up a HTTP(S) Load Balancer for you. This will let you do both path based and subdomain based routing to backend services
+
+ConfigMap:
+# list of env
+envFrom:
+- configMapRef
+
+--from-literal
+
+
+

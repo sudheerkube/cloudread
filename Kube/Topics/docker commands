@@ -1,0 +1,14 @@
+docker ps 
+docker ps -a 
+command ["command" "param"] 
+cmd 
+Entrypoint ["command]
+
+
+docker build Dockerfile -t "name"
+docker run "name"
+
+docker run -e # for envvaraibles
+
+
+

@@ -1,0 +1,24 @@
+----------------------------------------------------------------------------------------
+Replication Controller (old) :
+  - Helps running mutliple instanaces of single pod thus proivdes Replication Controller
+  -  For load Balancing and scaling 
+
+Replica Set(new) : 
+ - Selectors is mandatpry in Replica set 
+ - Selectors helps identify what pods under it, can also manage pods created before or exisitng pods.
+
+ ------------------------------------------------------------------------------------------
+
+ Deployments: 
+
+  - Used for Upgrades 
+  - Rolling Updates 
+  - Provides capbalities to upgarde pods and uses rolling updates. 
+  - It is layer above replicaset.
+  - So a Deployments creates replicaset for maintaing pods 
+
+--------------------------------------------------------------------------------------------
+
+Namespaces: helps in isolating environents 
+
+--------------------------------------------------------------------------------------------
