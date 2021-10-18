@@ -1,0 +1,91 @@
+- Resource
+
+- Resource provider
+-  Resource type 
+    - Provider
+	- Resource type
+	
+- terraform init
+- terraform plan
+- terrafrom apply
+--------------------------------------------------------------------------------------
+# Only after state file exists
+- terrafrom output
+
+# Terrafrom Functions
+  join, split etc..
+
+# Random resource
+  Count
+
+# Splat - exp 
+# For expressions
+
+# Taint and Untaint: command informs Terraform that a particular object has become degraded or damaged.
+Terraform represents this by marking the object as "tainted" in the terrform state, in which case Tf will
+ propose to replace it in the next plan you create.
+
+ ------------------------------------------------------------------------------------------
+ # Terrafrom state lock: 
+
+ #terrafrom import
+
+ -------------------------------------------------------------------------------------------
+# variables
+
+- variable "arg" {  } 
+
+
+variable "jedi" {
+     type = map
+     default = {
+          filename = "/root/first-jedi"
+          content = "phanius"
+     }
+	 
+resource "local_file" "jedi" {
+     filename = "/root/first-jedi"
+     content = "phanius"
+}
+- var in cli 
+or use export TF_VAR_filename="/root/cats.txt"
+or use .tfvars or .terraform.tfvars.json
+
+--- 
+terrform variable precdence
+ - env var < .tfvars < *.auto.tfvars < -var or -var-file ( command)
+----
+# Variables Validation
+ Can use functions 
+
+# Use Sensitive in Vars 
+sensitive = true 
+
+------------------------------------------------
+
+# Lookup Functions and Map
+
+---------------------------------------------
+
+#  Workspaces
+
+# Modules
+  - Nested Modules
+  - Encapsulate configuration,Re-use configuration,
+  - Terraform module is a set of Terraform configuration files in a single directory.
+
+#  Flatten is the function to merget the lists
+
+# Backend
+
+terraform {
+  backend "remote" {
+    organization = "infdev"
+
+    workspaces {
+      name = "infdev"
+    }
+  }
+}
+
+# Terraform Datasource
