@@ -1,0 +1,9 @@
+----Ansible---
+  - Order of tasks
+  - Ansible collections
+  - Flush of handlers
+  - runonce,delegate
+  - async
+  - 
+  
+  
