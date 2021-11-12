@@ -5,3 +5,5 @@ JIRA
 SonarQube
 Artifactory
 Scripting
+----------------
+CI: BuildAutomation,dev and qa builds,Unit tests,Setup CI system,Generate Build artifcats,Generate code coverage & Analysis,Setup Artifactory,Public results,Maintenance
