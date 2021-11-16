@@ -1,0 +1,10 @@
+Containers: container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment.
+depencies,libraries and process are all isolated for particular applications. Light weight
+Virutal Machines: Virtualization -> Esxi vmware (servers), Virtualbox,vagrant,(Local/laptop) - Multiple OS A vz technology where we can use to  install/deploy multiple os on a single 
+hardware. vmware,hyperv,xen.
+Different container providers - Docker,lxc
+
+Docker -> 2 editions
+           CE-community edition,EE-enterprise edition
+          
+docker run,exec,ps
