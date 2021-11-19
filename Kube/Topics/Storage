@@ -39,9 +39,12 @@ Persistent Volumes:
   - Contains access Modes: ReadOnlyMany,Readwirteonce,Readonly once
   - hostpath defines path to be mounted for volumes
 
-
 - Persistent Volume Claim: 
-  To make a volume availble to bind.
+To make a volume availble to bind.
+
+EmptyDir : can share the volume between the pods. Use volumes, Volumemounts and mountpath for defining.
+
+
 
 
 
