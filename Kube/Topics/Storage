@@ -44,6 +44,8 @@ To make a volume availble to bind.
 
 EmptyDir : can share the volume between the pods. Use volumes, Volumemounts and mountpath for defining.
 
+hostPath:
+
 
 
 
