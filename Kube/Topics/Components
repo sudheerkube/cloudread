@@ -93,3 +93,6 @@ use options like httpGet,get socket,
 liveness Pobes: 
 
 Check if app is alive or stuck or restart the container
+-----------------------------------------------------------
+
+Liecycle hooks: Poststart and Prestop.
