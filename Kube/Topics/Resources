@@ -1,1 +1,16 @@
+#
+Resources:
+
+CPU -> in cores ( millicpu)
+Memory -> Bytes ( MiB)
+
+Request -> Resources that system will guarantee for the container, kubernetes and decide on which node place the pod.
+Limit -> Maximum amount of resources that kubernetes will allow the container to use. 
+
+Resourcce Quota - Is defined at name space level
+ object -> resource quota
+ 
+ 
+ Limit range -> Define cpu Max and minimum 
+ Enforce minimum and maximum compute resources usage per Pod or Container in a namespace
 
