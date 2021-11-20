@@ -1,16 +1,16 @@
-kubectl apply -f ns.yml
+Imperative:
 kubectl create ns vote
 kubectl create -f votedeploy.yaml
-
 kubectl create -f "input file"
 kubectl get 
 kubeclt delete 
 kubectl replace -f 
 kubectl scale -replicas= -f 
-
 kubectl edit Deployment 
-
-
+kubectl replace -f 
+kubectl scale deployment 
+kubectl set imahe deployment
+kubeclt expose.
 kubectl get pods -n kubesystem
 
 change context:
@@ -18,7 +18,16 @@ change context:
 
 kubectl get all 
 
+Declarative:
+
+kubectl apply -f ns.yml or /path/to/configfiles
+for update: kubectl apply - 
 apiVersion: extensions/v1beta1
+
+Use --dry-run=client
+ex: kubectl run nginx --image=nginx --dry-run=client -o yaml
+    kubectl expose pod redis --port=6379 --name redis-service --dry-run=client -o yaml
+    
 kind: Deployment
 metadata:
   name: my-app
