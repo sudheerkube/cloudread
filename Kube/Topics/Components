@@ -9,13 +9,11 @@ kube-apiserver:  Is a central for all tasks in Kube clusters
 --------------------------------------------------------------------------------------------------------------------------------
 
 Kube Controller Manager:
-
-   - Watch Staus and Remediate Situation 
-   - Continosuly monitor and make sure cluster is in desired status 
-   like Node Controller 
+ Controller Manager:
    - Node Controller - Make sures nodes are working as expected 
    - Replication Controller - Make sures desired no of pods are running 
 
+   Other Controllers like Deplpyment,Name space, Endpoint, Replica Set, Stateful set,Damoenset,Cron,pv-ptotection,job.
    Other Controllers like Deplpyment,Name space, Endpoint, Replica Set, Stateful set,Damoenset 
 
    Commands : kubectl get pods -n kube-system
@@ -27,10 +25,17 @@ Kube-scheduler:
   - Responsible for where the pods to be placed on Nodes 
   Uses methods like Filter nodes, Rank nodes, others like resource limits, Daemon sets,
   Taints and Tolerants, Mutliple schedulers
+-------------------------------------------------------------------------------------------------------------------------------
+Label and selectoprs:
+        name,app or annotations
+   - Taints and Tolerants: Taint set are nodes and Tolerations on Pods
+           taine effect: Noschedule, PreferNoSchedule,NoExecute
 
    - Label and selectoprs: name,app or annotations
    - Taints and Tolerants: Noschedule, PreferNoSchedule,NoExecute
    - NodeSelector: 
+   - NodeAffinity: regurined during execution and prefered during Scheduling.
+---------------------------------------------------------------------------------------------------------------------------------
    - NodeAffinity:
 
     - Resource Limits: CPU,MEM,DISK min is 0.5 cpu, 256Mi
@@ -41,44 +46,7 @@ Kube-scheduler:
 -------------------------------------------------------------------------------------------------------------------------------
 
 kubelet: 
-   - Register the nodes with Kube cluster 
-   - Requests docker engine to pull images to create pods and monitors and reports to Kubeapi 
-
--------------------------------------------------------------------------------------------------------------------------------
-
-Kubeproxy: 
-
-    - Helps in communicating across different pods. Conists of virtual POD network 
-    - Looks for new services and .creates rules to communicate the services 
---------------------------------------------------------------------------------------------------------------------------------
-
-Pods:
-
-- Is a single instance of application, a smallest object in kuberenertes 
-- Multiple containers can be accomadeted in a single pod like helper container 
-
--------------------------------------------------------------------------------------------------------------------------------------
-
-Secrets: 
-   - They are stored in encoded format
-   The input can be given using --from-liertal or using file 
-
-   use envFrom
-     - secretRef 
-     can be done in env and also in volumes.
-CongigMap: 
-
---------------------------------------------------------------------------------------------------------------------------------------
-
-MultiContainers:
-
-- share same lifecycle share same nodes,volumes
-
-InitContainers:
-- When a POD is first created the initContainer is run, and the process in the initContainer must run to a completion before the real container hosting the application starts. 
-
-You can configure multiple such initContainers as well, like how we did for multi-pod containers. In that case each init container is run one at a time in sequential order.
-
+You can configure multiple such initContainers as well, like how we did for mult
 If any of the initContainers fail to complete, Kubernetes restarts the Pod repeatedly until the Init Container succeeds
 
 ----------------------------------------------------------
@@ -88,13 +56,3 @@ Readiness Probes:
 TO check the pods are ready to be send traffic
 
 use options like httpGet,get socket,
-
----------------------------------------------------------
-liveness Pobes: 
-
-Check if app is alive or stuck or restart the container
-
----------------------------------------------------------------
-
-Lifecycle: 
-Pre and post
