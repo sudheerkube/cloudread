@@ -1,9 +1,11 @@
 ETCD: 
    - Is a distributed Key value store 
+
 --------------------------------------------------------------------------------------------------------------------------------   
 
 kube-apiserver:  Is a central for all tasks in Kube clusters 
    -  Authenticate, Validate,retrieve data, Update ETCD, scheduler,kubelet 
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Kube Controller Manager:
@@ -14,27 +16,27 @@ Kube Controller Manager:
    - Node Controller - Make sures nodes are working as expected 
    - Replication Controller - Make sures desired no of pods are running 
 
-   Other Controllers like Deplpyment,Name space, Endpoint, Replica Set, Stateful set,Damoenset,Cron,pv-ptotection,job.
+   Other Controllers like Deplpyment,Name space, Endpoint, Replica Set, Stateful set,Damoenset 
 
    Commands : kubectl get pods -n kube-system
    Multiple Schedulers: 
+
 -------------------------------------------------------------------------------------------------------------------------------
 
 Kube-scheduler:
   - Responsible for where the pods to be placed on Nodes 
   Uses methods like Filter nodes, Rank nodes, others like resource limits, Daemon sets,
   Taints and Tolerants, Mutliple schedulers
--------------------------------------------------------------------------------------------------------------------------------
-Label and selectoprs:
-        name,app or annotations
-   - Taints and Tolerants: Taint set are nodes and Tolerations on Pods
-           taine effect: Noschedule, PreferNoSchedule,NoExecute
+
+   - Label and selectoprs: name,app or annotations
+   - Taints and Tolerants: Noschedule, PreferNoSchedule,NoExecute
    - NodeSelector: 
-   - NodeAffinity: regurined during execution and prefered during Scheduling.
----------------------------------------------------------------------------------------------------------------------------------
+   - NodeAffinity:
+
     - Resource Limits: CPU,MEM,DISK min is 0.5 cpu, 256Mi
     -  Damoenset: Make sures atleast one copy of pod is always present in the cluster 
     - StaticPods: 
+
 
 -------------------------------------------------------------------------------------------------------------------------------
 
@@ -80,15 +82,18 @@ You can configure multiple such initContainers as well, like how we did for mult
 If any of the initContainers fail to complete, Kubernetes restarts the Pod repeatedly until the Init Container succeeds
 
 ----------------------------------------------------------
+
 Readiness Probes: 
 
 TO check the pods are ready to be send traffic
 
 use options like httpGet,get socket,
 
+---------------------------------------------------------
 liveness Pobes: 
 
 Check if app is alive or stuck or restart the container
------------------------------------------------------------
 
-Liecycle hooks: Poststart and Prestop.
+---------------------------------------------------------------
+
+Lifecycle: 
