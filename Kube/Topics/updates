@@ -13,3 +13,4 @@ kubectl rollout undo deployment/myapp-deployment
 -------------------------------------------------------------------------------------------------------------------
 
 OS Upgrades: 
+  Cordon and Uncordon
