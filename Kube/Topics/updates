@@ -13,4 +13,10 @@ kubectl rollout undo deployment/myapp-deployment
 -------------------------------------------------------------------------------------------------------------------
 
 OS Upgrades: 
+  kubectl drain nodename
+  kubectl uncordon
   Cordon and Uncordon
+
+Kubeadm -> kubeadm upgrade plan
+- kubeadm upgrade apply 
+- * manually upgrade the kubelet and restart
