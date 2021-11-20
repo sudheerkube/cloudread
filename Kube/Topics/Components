@@ -16,7 +16,7 @@ Kube Controller Manager:
    - Node Controller - Make sures nodes are working as expected 
    - Replication Controller - Make sures desired no of pods are running 
 
-   Other Controllers like Deplpyment,Name space, Endpoint, Replica Set, Stateful set,Damoenset 
+   Other Controllers like Deplpyment,Name space, Endpoint, Replica Set, Stateful set,Damoenset,Cron,pv-ptotection,job.
 
    Commands : kubectl get pods -n kube-system
    Multiple Schedulers: 
