@@ -1,0 +1,20 @@
+Helm: 
+ - Acts a repositry for the applications being maintained on kubernetes cluster.
+ - It is a collection of all your versioned, pre-configured application resources which can be deployed as one unit.
+ - You can then deploy another version of the chart with a different set of configuration
+ 
+ - Helm is a package manager for Kubernetes. Helm is the K8s equivalent of yum or apt. Helm deploys charts, which you can think of as a packaged application
+ 
+ Chart:
+ - Charts are packgaing format for helm
+ - A package of pre-configured Kubernetes resources.
+ - A folder with collection of files that describes k8 manifests.
+ 
+ Release:
+  - A specific instance of a chart which has been deployed to the cluster using Helm.
+  - Helm creates a new release for each installation of chart.
+  
+ Repository: 
+ - A group of published charts which can be made available to others.
+
+  
