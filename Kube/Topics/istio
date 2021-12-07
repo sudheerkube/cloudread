@@ -1,1 +1,15 @@
 
+Monolithics & Microservices:
+ 
+-  All the functionalities of a project exists in a single codebase
+-  Everything depends on a single backend (DB)
+
+
+Microservices:
+
+ - Instead of sharing a single database with other microservices, each microservice has its own database. It often results in duplication of some data but having a database per microservice is essential if you want to benefit from this 
+architecture as it ensures loose coupling. Another advantage of having a separate database per microservice is that each microservice can use the type of database best suited for
+its needs.
+
+- These units carry out every application process as a separate service. So all the services have their own logic and the database as well as perform the specific functions.
+- microservice can use different technology based on the business requirements.
