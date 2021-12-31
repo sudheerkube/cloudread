@@ -13,3 +13,8 @@ its needs.
 
 - These units carry out every application process as a separate service. So all the services have their own logic and the database as well as perform the specific functions.
 - microservice can use different technology based on the business requirements.
+
+Gateway- 
+Ingress , egress
+Virtual Services
+Destination Rules.
