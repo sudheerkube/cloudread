@@ -18,3 +18,10 @@ Gateway-
 Ingress , egress
 Virtual Services
 Destination Rules.
+
+Fault Injection: 
+test the resiliency of your application, instead of killing pods, delaying packets, or corrupting packets at the TCP layer.
+
+TimeOuts:
+
+
