@@ -97,13 +97,18 @@ networks (if enabled), and to the Internet. Traffic flow to the Internet is achi
 
         Premium Storage: P10-p50: Is local only, Snapshot and GRS 
 
-        - Managed Disks - 0,000 VM disks in a subscription, which will enable you to create thousands of VMs 
+        - Managed Disks - 10,000 VM disks in a subscription, which will enable you to create thousands of VMs 
          in a single subscription.
+         
+         - - Snapshots, Blob Versoining and soft delete and undelete.
+         - Azure File Sync: Enable copy from on perm and single cloudend point and tiering
 
 Virtual Machines : 
    - availability set: Fault Domains and update domain
 
     - Azure disk encryption -> Azure Key Vault service -> BitLocker for Windows VM Disks and DMCrypt for Linux VM disks
+    
+    
 
     - 
 
