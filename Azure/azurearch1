@@ -39,6 +39,8 @@ Azure Traffic Manager -> HA in an active/passive design. Azure tm is created,
 Azure Load balancer -> -do-
 
 Network: 
+  - Azure limited to subscription and regions.
+  - VMNIC - Can reserve IP address using arm and portal.
  ExpressRoute -> Private peering connections to customer virtual networks and 
       Microsoft peering connection to Microsoft services like Office 365
     and Skype and any Azure public services (PaaS)
@@ -70,10 +72,12 @@ networks (if enabled), and to the Internet. Traffic flow to the Internet is achi
  VirtualAppliance routing, route to the virtual appliance, based on address.
   Internet routing, route to the Internet over the host NAT
 
+
   Network Security Groups -> control traffic to one or more virtual machine instances in a virtual network. Network Security Groups are like firewall rules
    in that they provide the ability to control the inbound and outbound traffic to a subnet, a virtual machine,
     or virtual network adapter.
     - NSG limits :  100 region/per subscription, 1 for subnet,vm, adapter, 100 rules
+    
 
 
  Storage: 
