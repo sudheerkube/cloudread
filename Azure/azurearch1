@@ -85,7 +85,7 @@ networks (if enabled), and to the Internet. Traffic flow to the Internet is achi
     This tier is hosted on Solid State Drives (SSD).
        GPV2->
 
-        - Types: Blob (block,page), table, Queue, File.
+        - Types: Blob (block,page,append), table, Queue, File.
         Blob: 3 tier -> hot,cold and archieve.
      
      -  Storage Security: Azure authentication and Storage account key 
@@ -118,3 +118,8 @@ PAAS (Platform as a service):
 - Azure Automation
 
 - Azure Resource Locking 
+- Shared Access Signatures and policy: 
+     - Service SAS and Account SAS
+     - Signed with account Key
+     - Services SAS with adhoc and stored access  policy.
+     
